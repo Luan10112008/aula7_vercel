@@ -13,8 +13,6 @@
 const express = require('express');
 const router = express.Router();
 const supabase = require('../data/supabase');
-// ⚠️ Usamos 'let' (não 'const') porque a rota DELETE vai
-//    reatribuir db.produtos com um novo array filtrado.
 
 // =============================================================
 // ── AULA 6: ROTA ESPECIAL PARA TESTE DE ERRO ─────────────────
