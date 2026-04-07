@@ -1,11 +1,12 @@
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config();
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
+require('dotenv').config(); // Carrega as variáveis de ambiente do .env
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_KEY;
 
-if(!supabaseUrl || !supabaseKey) {
-console.error('SUPABASE_URL ou SUPABASE_KEY not found .env')
+if (!SUPABASE_URL || !SUPABASE_KEY) {
+    console.error('Erro: Variáveis de ambiente SUPABASE_URL e SUPABASE_KEY não estão definidas.');
 }
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
 module.exports = supabase;
